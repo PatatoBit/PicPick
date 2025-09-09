@@ -17,7 +17,7 @@ struct ContentView: View {
                 .frame(height: 60)
             GeometryReader { geometry in
                 VStack(spacing: 0) {
-                    PhotoAreaView()
+                    PhotoAreaView(images: images)
                         .frame(height: geometry.size.height * 0.65)
                     BottomNavView()
                         .frame(height: geometry.size.height * 0.15)
