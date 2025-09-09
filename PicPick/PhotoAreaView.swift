@@ -14,20 +14,19 @@ struct PhotoAreaView: View {
       } else {
         ZStack {
           // Show earlier photos behind, not draggable
-          let nonDraggableImages = images.dropLast().reversed()
+          let nonDraggableImages = images.dropLast()
           ForEach(Array(nonDraggableImages.enumerated()), id: \.offset) { pair in
             let image = pair.element
             let index = pair.offset
             // Alternate rotation angles for peek effect
-            let rotationAngles: [Double] = [-8, 8, -6, 6, -4, 4, -2, 2]
-            let angle = rotationAngles[index % rotationAngles.count]
+            // let rotationAngles: [Double] = [-8, 8, -6, 6, -4, 4, -2, 2]
+            // let angle = rotationAngles[index % rotationAngles.count]
             Image(uiImage: image)
               .resizable()
               .scaledToFit()
-              .frame(maxWidth: 350, maxHeight: 500)
-              .cornerRadius(20)
+              .frame(maxWidth: 400, maxHeight: 500)
               .padding(.bottom, CGFloat(index) * 2)
-              .rotationEffect(.degrees(angle))
+            // .rotationEffect(.degrees(angle))
           }
           // Show most recent photo on top, draggable
           if let last = images.last {
@@ -57,7 +56,6 @@ struct DraggablePhotoView: View {
       .resizable()
       .scaledToFit()
       .frame(maxWidth: 350, maxHeight: 500)
-      .cornerRadius(20)
       .offset(offset)
       .rotationEffect(.degrees(rotationAngle))
       .gesture(
