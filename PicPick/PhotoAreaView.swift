@@ -12,23 +12,19 @@ struct PhotoAreaView: View {
           .foregroundColor(.gray)
         Spacer()
       } else {
-        ScrollView(.horizontal, showsIndicators: false) {
-          HStack(spacing: 16) {
-            ForEach(images.indices, id: \.self) { index in
-              Image(uiImage: images[index])
-                .resizable()
-                .scaledToFit()
-                .frame(height: 200)
-                .cornerRadius(12)
-                .shadow(radius: 4)
-            }
+        ZStack {
+          ForEach(images.indices, id: \.self) { index in
+            Image(uiImage: images[index])
+              .resizable()
+              .scaledToFit()
           }
-          .padding()
         }
+        .padding(15)
       }
     }
-    .frame(maxWidth: .infinity)
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color(.systemBackground))
+    // .border(Color.green, width: 2)
   }
 }
 
