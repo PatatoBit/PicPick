@@ -13,15 +13,13 @@ struct ContentView: View {
 
   var body: some View {
     VStack(spacing: 0) {
-      TopBarView()
-        .frame(height: 60)
+      TopBarView(photoCount: images.count)
 
       PhotoAreaView(images: images)
         .frame(maxWidth: .infinity)
         .frame(maxHeight: .infinity)
 
       BottomNavView()
-        .frame(height: 60)
     }
     .onAppear {
       requestPermissionAndFetch()
