@@ -4,12 +4,14 @@ struct TopBarView: View {
   var body: some View {
     HStack {
       Spacer()
-      Text(Date(), style: .date)
-        .font(.headline)
+      Text("today")
+        .font(.largeTitle)
+        .fontDesign(.rounded)
+        .bold()
         .padding()
       Spacer()
     }
-    .background(Color(.systemGray6))
+    // .background(Color(.systemGray6))
   }
 }
 
