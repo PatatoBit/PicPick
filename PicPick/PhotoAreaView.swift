@@ -13,8 +13,18 @@ struct PhotoAreaView: View {
         Spacer()
       } else {
         ZStack {
-          ForEach(images.indices, id: \.self) { index in
-            DraggablePhotoView(image: images[index])
+          // Show earlier photos behind, not draggable
+          ForEach(images.dropLast().indices, id: \.self) { index in
+            Image(uiImage: images[index])
+              .resizable()
+              .scaledToFit()
+              .frame(maxWidth: 350, maxHeight: 500)
+              .cornerRadius(20)
+              .padding(.bottom, CGFloat(images.count - index - 1) * 2)  // slight offset for stacking
+          }
+          // Show most recent photo on top, draggable
+          if let last = images.last {
+            DraggablePhotoView(image: last)
           }
         }
         .padding(15)
