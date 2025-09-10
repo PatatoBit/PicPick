@@ -72,7 +72,6 @@ struct DraggablePhotoView: View {
             }
           }
       )
-      .animation(.spring(), value: offset)
   }
 }
 
