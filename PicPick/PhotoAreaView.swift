@@ -23,8 +23,14 @@ struct PhotoAreaView: View {
             // let angle = rotationAngles[index % rotationAngles.count]
             Image(uiImage: image)
               .resizable()
-              .scaledToFit()
-              .frame(maxWidth: 400, maxHeight: 500)
+              .interpolation(.high)
+              .aspectRatio(
+                CGSize(width: image.size.width, height: image.size.height), contentMode: .fit
+              )
+              .frame(
+                width: min(image.size.width, 400),
+                height: min(image.size.height, 500)
+              )
               .padding(.bottom, CGFloat(index) * 2)
             // .rotationEffect(.degrees(angle))
           }
@@ -54,8 +60,12 @@ struct DraggablePhotoView: View {
   var body: some View {
     Image(uiImage: image)
       .resizable()
-      .scaledToFit()
-      .frame(maxWidth: 350, maxHeight: 500)
+      .interpolation(.high)
+      .aspectRatio(CGSize(width: image.size.width, height: image.size.height), contentMode: .fit)
+      .frame(
+        width: min(image.size.width, 350),
+        height: min(image.size.height, 500)
+      )
       .offset(offset)
       .rotationEffect(.degrees(rotationAngle))
       .gesture(
