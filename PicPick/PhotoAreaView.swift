@@ -1,87 +1,49 @@
 import SwiftUI
 
+/// Minimal placeholder for the photo area. Keeps the same public API
+/// so you can reimplement fetching/rendering without breaking the rest
+/// of the app. Replace with your own implementation when ready.
 struct PhotoAreaView: View {
   let images: [UIImage]
 
   var body: some View {
-    VStack {
+    Group {
       if images.isEmpty {
-        Spacer()
-        Text("No photos today")
-          .font(.title)
-          .foregroundColor(.gray)
-        Spacer()
-      } else {
-        ZStack {
-          // Show earlier photos behind, not draggable
-          let nonDraggableImages = images.dropLast()
-          ForEach(Array(nonDraggableImages.enumerated()), id: \.offset) { pair in
-            let image = pair.element
-            let index = pair.offset
-            // Alternate rotation angles for peek effect
-            // let rotationAngles: [Double] = [-8, 8, -6, 6, -4, 4, -2, 2]
-            // let angle = rotationAngles[index % rotationAngles.count]
-            Image(uiImage: image)
-              .resizable()
-              .interpolation(.high)
-              .aspectRatio(
-                CGSize(width: image.size.width, height: image.size.height), contentMode: .fit
-              )
-              .frame(
-                width: min(image.size.width, 400),
-                height: min(image.size.height, 500)
-              )
-              .padding(.bottom, CGFloat(index) * 2)
-            // .rotationEffect(.degrees(angle))
-          }
-          // Show most recent photo on top, draggable
-          if let last = images.last {
-            DraggablePhotoView(image: last)
-          }
+        VStack {
+          Spacer()
+          Image(systemName: "photo.on.rectangle.angled")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 120, height: 120)
+            .foregroundColor(.gray.opacity(0.6))
+            .padding(.bottom, 8)
+          Text("No photos for the selected date")
+            .font(.title3)
+            .foregroundColor(.gray)
+          Spacer()
         }
-        .padding(15)
+      } else {
+        // Simple vertical list of thumbnails for now — lightweight and easy
+        // to replace with a deck/swipe UI when you're ready.
+        ScrollView(.vertical) {
+          LazyVStack(spacing: 12) {
+            ForEach(Array(images.enumerated()), id: \.offset) { pair in
+              Image(uiImage: pair.element)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 400)
+                .cornerRadius(8)
+                .shadow(radius: 2)
+                .padding(.vertical, 4)
+            }
+          }
+          .frame(maxWidth: .infinity)
+          .padding()
+        }
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color(.systemBackground))
-  }
-}
-
-struct DraggablePhotoView: View {
-  let image: UIImage
-  @State private var offset: CGSize = .zero
-  @State private var isDragging = false
-
-  var rotationAngle: Double {
-    // Rotate more as you drag further left/right
-    Double(offset.width / 15)
-  }
-
-  var body: some View {
-    Image(uiImage: image)
-      .resizable()
-      .interpolation(.high)
-      .aspectRatio(CGSize(width: image.size.width, height: image.size.height), contentMode: .fit)
-      .frame(
-        width: min(image.size.width, 350),
-        height: min(image.size.height, 500)
-      )
-      .offset(offset)
-      .rotationEffect(.degrees(rotationAngle))
-      .gesture(
-        DragGesture()
-          .onChanged { value in
-            offset = value.translation
-            isDragging = true
-          }
-          .onEnded { _ in
-            // Snap back for now, no removal
-            withAnimation(.spring()) {
-              offset = .zero
-              isDragging = false
-            }
-          }
-      )
   }
 }
 
