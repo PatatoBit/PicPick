@@ -2,8 +2,24 @@ import SwiftUI
 
 struct PhotoAreaView: View {
   let images: [UIImage]
+  @Binding var dragDirection: DragDirection  // Binding passed from parent
 
-  @State private var dragOffset = CGSize.zero
+  @State private var dragOffset = CGSize.zero  // Local state for drag tracking
+
+  // Computed property to calculate direction from offset
+  private var computedDragDirection: DragDirection {
+    let threshold: CGFloat = 80
+    if abs(dragOffset.width) > abs(dragOffset.height) {
+      if dragOffset.width < -threshold {
+        return .left
+      } else if dragOffset.width > threshold {
+        return .right
+      }
+    } else {
+      if dragOffset.height > threshold { return .down }
+    }
+    return .none
+  }
 
   var body: some View {
     Group {
@@ -47,10 +63,12 @@ struct PhotoAreaView: View {
                     ? DragGesture()
                       .onChanged { value in
                         dragOffset = value.translation
+                        dragDirection = computedDragDirection  // Update parent
                       }
                       .onEnded { value in
                         withAnimation(.spring()) {
                           dragOffset = .zero
+                          dragDirection = .none
                         }
                       }
                     : nil
@@ -66,11 +84,5 @@ struct PhotoAreaView: View {
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color(.systemBackground))
-  }
-}
-
-struct PhotoAreaView_Previews: PreviewProvider {
-  static var previews: some View {
-    PhotoAreaView(images: [])
   }
 }

@@ -13,6 +13,8 @@ struct ContentView: View {
   @State private var openSelector: Bool = false
   @State private var selectedDate: Date = Date()
 
+  @State private var currentDragDirection: DragDirection = .none
+
   var body: some View {
     VStack(spacing: 0) {
       TopBarView(photoCount: images.count)
@@ -37,11 +39,11 @@ struct ContentView: View {
         Text("Selected Date: \(selectedDate.formatted(date: .long, time: .omitted))")
 
       }
-      PhotoAreaView(images: images)
+      PhotoAreaView(images: images, dragDirection: $currentDragDirection)
         .frame(maxWidth: .infinity)
         .frame(maxHeight: .infinity)
 
-      BottomNavView()
+      BottomNavView(activeDragDirection: currentDragDirection)
     }
     .onAppear {
       requestPermissionAndFetch()
