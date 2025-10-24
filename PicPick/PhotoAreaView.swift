@@ -1,10 +1,9 @@
 import SwiftUI
 
-/// Minimal placeholder for the photo area. Keeps the same public API
-/// so you can reimplement fetching/rendering without breaking the rest
-/// of the app. Replace with your own implementation when ready.
 struct PhotoAreaView: View {
   let images: [UIImage]
+
+  @State private var dragOffset = CGSize.zero
 
   var body: some View {
     Group {
@@ -23,23 +22,46 @@ struct PhotoAreaView: View {
           Spacer()
         }
       } else {
-        // Simple vertical list of thumbnails for now — lightweight and easy
-        // to replace with a deck/swipe UI when you're ready.
-        ScrollView(.vertical) {
-          LazyVStack(spacing: 12) {
-            ForEach(Array(images.enumerated()), id: \.offset) { pair in
-              Image(uiImage: pair.element)
+
+        ZStack {
+          ForEach(Array(images.enumerated()), id: \.offset) { index, image in
+            ZStack {
+
+              Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 400)
                 .cornerRadius(8)
-                .shadow(radius: 2)
+                .shadow(radius: index == images.count - 1 ? 4 : 0)
                 .padding(.vertical, 4)
+                .offset(index == images.count - 1 ? dragOffset : .zero)  // Apply offset to top image
+                .rotationEffect(
+                  .degrees(
+                    index == images.count - 1
+                      ? Double(dragOffset.width / 15)  // Rotate based on horizontal drag
+                      : 0
+                  )
+                )
+                .gesture(
+                  index == images.count - 1
+                    ? DragGesture()
+                      .onChanged { value in
+                        dragOffset = value.translation
+                      }
+                      .onEnded { value in
+                        withAnimation(.spring()) {
+                          dragOffset = .zero
+                        }
+                      }
+                    : nil
+                )
+
             }
+
           }
-          .frame(maxWidth: .infinity)
-          .padding()
         }
+        .frame(maxWidth: .infinity)
+        .padding()
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)

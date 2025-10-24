@@ -82,7 +82,7 @@ struct ContentView: View {
     requestOptions.deliveryMode = .highQualityFormat
 
     results.enumerateObjects { asset, _, _ in
-      let targetSize = CGSize(width: 500, height: 500)
+      let targetSize = CGSize(width: 1000, height: 1000)
       imageManager.requestImage(
         for: asset,
         targetSize: targetSize,
