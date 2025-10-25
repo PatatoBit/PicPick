@@ -11,34 +11,13 @@ import SwiftUI
 struct ContentView: View {
   @State private var images: [UIImage] = []
   @State private var openSelector: Bool = false
-  @State private var selectedDate: Date = Date()
-
+  @State private var currentDate: Date = Date()
   @State private var currentDragDirection: DragDirection = .none
 
   var body: some View {
     VStack(spacing: 0) {
-      TopBarView(photoCount: images.count)
+      TopBarView(photoCount: images.count, selectedDate: $currentDate)
 
-      Toggle("Select Date", isOn: $openSelector)
-        .padding(.horizontal)
-        .padding(.top, 8)
-
-      if openSelector {
-        // Date picker
-        DatePicker(
-          "Select Date",  // Label for the DatePicker
-          selection: $selectedDate,  // Binding to the selectedDate state variable
-          displayedComponents: .date  // Display only the date component (month, day, year)
-        )
-        .onChange(of: selectedDate) { newDate in
-          images.removeAll()
-          fetchTodayPhotos(date: newDate)
-        }
-        .datePickerStyle(.graphical)  // Optional: Use graphical style for a calendar view
-
-        Text("Selected Date: \(selectedDate.formatted(date: .long, time: .omitted))")
-
-      }
       PhotoAreaView(images: images, dragDirection: $currentDragDirection)
         .frame(maxWidth: .infinity)
         .frame(maxHeight: .infinity)
@@ -47,6 +26,10 @@ struct ContentView: View {
     }
     .onAppear {
       requestPermissionAndFetch()
+    }
+    .onChange(of: currentDate) { oldValue, newValue in
+      images = []  // Clear existing images
+      fetchTodayPhotos(date: newValue)
     }
   }
 
