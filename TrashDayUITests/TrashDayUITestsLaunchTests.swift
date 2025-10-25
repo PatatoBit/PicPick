@@ -1,13 +1,13 @@
 //
-//  PicPickUITestsLaunchTests.swift
-//  PicPickUITests
+//  TrashDayUITestsLaunchTests.swift
+//  TrashDayUITests
 //
 //  Created by Patato on 8/9/25.
 //
 
 import XCTest
 
-final class PicPickUITestsLaunchTests: XCTestCase {
+final class TrashDayUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

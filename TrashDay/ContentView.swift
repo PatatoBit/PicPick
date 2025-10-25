@@ -10,19 +10,33 @@ import SwiftUI
 
 struct ContentView: View {
   @State private var images: [UIImage] = []
+  @State private var openSelector: Bool = false
+  @State private var currentDate: Date = Date()
+  @State private var currentDragDirection: DragDirection = .none
+  @State private var loadedDateStartOfDay: Date? = nil
+  @State private var isLoading: Bool = false
 
   var body: some View {
-    VStack(spacing: 0) {
-      TopBarView(photoCount: images.count)
+    NavigationStack {
+      VStack(spacing: 0) {
+        TopBarView(photoCount: images.count, selectedDate: $currentDate)
 
-      PhotoAreaView(images: images)
-        .frame(maxWidth: .infinity)
-        .frame(maxHeight: .infinity)
+        PhotoAreaView(images: images, dragDirection: $currentDragDirection)
+          .frame(maxWidth: .infinity)
+          .frame(maxHeight: .infinity)
 
-      BottomNavView()
-    }
-    .onAppear {
-      requestPermissionAndFetch()
+        BottomNavView(activeDragDirection: currentDragDirection)
+      }
+      .onAppear {
+        requestPermissionAndFetch()
+      }
+      .onChange(of: currentDate) { oldValue, newValue in
+        // When the date changes, clear and load new day's photos
+        images = []
+        loadedDateStartOfDay = nil
+        fetchTodayPhotos(date: newValue)
+      }
+
     }
   }
 
@@ -35,14 +49,26 @@ struct ContentView: View {
   private func requestPermissionAndFetch() {
     PHPhotoLibrary.requestAuthorization { status in
       if status == .authorized {
-        fetchTodayPhotos()
+        fetchTodayPhotos(date: currentDate)
       }
     }
   }
 
-  private func fetchTodayPhotos() {
+  private func fetchTodayPhotos(date: Date? = nil) {
+    // Prevent duplicate loads and unnecessary refetching when navigating back
+    if isLoading { return }
     let calendar = Calendar.current
-    let startOfDay = calendar.startOfDay(for: Date())
+    let startOfDay = calendar.startOfDay(for: date ?? Date())
+    if loadedDateStartOfDay == startOfDay && !images.isEmpty {
+      // Already loaded this day's images
+      return
+    }
+
+    isLoading = true
+    if loadedDateStartOfDay != startOfDay {
+      images.removeAll()
+    }
+    loadedDateStartOfDay = startOfDay
     var dayComponent = DateComponents()
     dayComponent.day = 1
     let endOfDay = calendar.date(byAdding: dayComponent, to: startOfDay)!
@@ -60,7 +86,7 @@ struct ContentView: View {
     requestOptions.deliveryMode = .highQualityFormat
 
     results.enumerateObjects { asset, _, _ in
-      let targetSize = CGSize(width: 500, height: 500)
+      let targetSize = CGSize(width: 1000, height: 1000)
       imageManager.requestImage(
         for: asset,
         targetSize: targetSize,
@@ -74,6 +100,9 @@ struct ContentView: View {
         }
       }
     }
+
+    // Mark not loading after scheduling all requests
+    isLoading = false
   }
 }
 
