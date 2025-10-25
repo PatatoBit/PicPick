@@ -29,7 +29,7 @@ struct PhotoAreaView: View {
           Image(systemName: "photo.on.rectangle.angled")
             .resizable()
             .scaledToFit()
-            .frame(width: 120, height: 120)
+            .frame(width: 60   , height: 60)
             .foregroundColor(.gray.opacity(0.6))
             .padding(.bottom, 8)
           Text("No photos for the selected date")
@@ -85,4 +85,8 @@ struct PhotoAreaView: View {
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color(.systemBackground))
   }
+}
+
+#Preview {
+  ContentView()
 }
