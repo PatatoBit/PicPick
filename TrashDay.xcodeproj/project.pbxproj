@@ -12,37 +12,37 @@
 			containerPortal = 6EF5BAEA2E6F243F00FF6253 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6EF5BAF12E6F243F00FF6253;
-			remoteInfo = PicPick;
+			remoteInfo = TrashDay;
 		};
 		6EF5BB0A2E6F244100FF6253 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6EF5BAEA2E6F243F00FF6253 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6EF5BAF12E6F243F00FF6253;
-			remoteInfo = PicPick;
+			remoteInfo = TrashDay;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6EF5BAF22E6F243F00FF6253 /* PicPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EF5BAFF2E6F244100FF6253 /* PicPickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicPickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EF5BB092E6F244100FF6253 /* PicPickUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicPickUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF5BAF22E6F243F00FF6253 /* TrashDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrashDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF5BAFF2E6F244100FF6253 /* TrashDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrashDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF5BB092E6F244100FF6253 /* TrashDayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrashDayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		6EF5BAF42E6F243F00FF6253 /* PicPick */ = {
+		6EF5BAF42E6F243F00FF6253 /* TrashDay */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PicPick;
+			path = TrashDay;
 			sourceTree = "<group>";
 		};
-		6EF5BB022E6F244100FF6253 /* PicPickTests */ = {
+		6EF5BB022E6F244100FF6253 /* TrashDayTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PicPickTests;
+			path = TrashDayTests;
 			sourceTree = "<group>";
 		};
-		6EF5BB0C2E6F244100FF6253 /* PicPickUITests */ = {
+		6EF5BB0C2E6F244100FF6253 /* TrashDayUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PicPickUITests;
+			path = TrashDayUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		6EF5BAE92E6F243F00FF6253 = {
 			isa = PBXGroup;
 			children = (
-				6EF5BAF42E6F243F00FF6253 /* PicPick */,
-				6EF5BB022E6F244100FF6253 /* PicPickTests */,
-				6EF5BB0C2E6F244100FF6253 /* PicPickUITests */,
+				6EF5BAF42E6F243F00FF6253 /* TrashDay */,
+				6EF5BB022E6F244100FF6253 /* TrashDayTests */,
+				6EF5BB0C2E6F244100FF6253 /* TrashDayUITests */,
 				6EF5BAF32E6F243F00FF6253 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		6EF5BAF32E6F243F00FF6253 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6EF5BAF22E6F243F00FF6253 /* PicPick.app */,
-				6EF5BAFF2E6F244100FF6253 /* PicPickTests.xctest */,
-				6EF5BB092E6F244100FF6253 /* PicPickUITests.xctest */,
+				6EF5BAF22E6F243F00FF6253 /* TrashDay.app */,
+				6EF5BAFF2E6F244100FF6253 /* TrashDayTests.xctest */,
+				6EF5BB092E6F244100FF6253 /* TrashDayUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6EF5BAF12E6F243F00FF6253 /* PicPick */ = {
+		6EF5BAF12E6F243F00FF6253 /* TrashDay */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6EF5BB132E6F244100FF6253 /* Build configuration list for PBXNativeTarget "PicPick" */;
+			buildConfigurationList = 6EF5BB132E6F244100FF6253 /* Build configuration list for PBXNativeTarget "TrashDay" */;
 			buildPhases = (
 				6EF5BAEE2E6F243F00FF6253 /* Sources */,
 				6EF5BAEF2E6F243F00FF6253 /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				6EF5BAF42E6F243F00FF6253 /* PicPick */,
+				6EF5BAF42E6F243F00FF6253 /* TrashDay */,
 			);
-			name = PicPick;
+			name = TrashDay;
 			packageProductDependencies = (
 			);
-			productName = PicPick;
-			productReference = 6EF5BAF22E6F243F00FF6253 /* PicPick.app */;
+			productName = TrashDay;
+			productReference = 6EF5BAF22E6F243F00FF6253 /* TrashDay.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6EF5BAFE2E6F244100FF6253 /* PicPickTests */ = {
+		6EF5BAFE2E6F244100FF6253 /* TrashDayTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6EF5BB162E6F244100FF6253 /* Build configuration list for PBXNativeTarget "PicPickTests" */;
+			buildConfigurationList = 6EF5BB162E6F244100FF6253 /* Build configuration list for PBXNativeTarget "TrashDayTests" */;
 			buildPhases = (
 				6EF5BAFB2E6F244100FF6253 /* Sources */,
 				6EF5BAFC2E6F244100FF6253 /* Frameworks */,
@@ -131,18 +131,18 @@
 				6EF5BB012E6F244100FF6253 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				6EF5BB022E6F244100FF6253 /* PicPickTests */,
+				6EF5BB022E6F244100FF6253 /* TrashDayTests */,
 			);
-			name = PicPickTests;
+			name = TrashDayTests;
 			packageProductDependencies = (
 			);
-			productName = PicPickTests;
-			productReference = 6EF5BAFF2E6F244100FF6253 /* PicPickTests.xctest */;
+			productName = TrashDayTests;
+			productReference = 6EF5BAFF2E6F244100FF6253 /* TrashDayTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6EF5BB082E6F244100FF6253 /* PicPickUITests */ = {
+		6EF5BB082E6F244100FF6253 /* TrashDayUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6EF5BB192E6F244100FF6253 /* Build configuration list for PBXNativeTarget "PicPickUITests" */;
+			buildConfigurationList = 6EF5BB192E6F244100FF6253 /* Build configuration list for PBXNativeTarget "TrashDayUITests" */;
 			buildPhases = (
 				6EF5BB052E6F244100FF6253 /* Sources */,
 				6EF5BB062E6F244100FF6253 /* Frameworks */,
@@ -154,13 +154,13 @@
 				6EF5BB0B2E6F244100FF6253 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				6EF5BB0C2E6F244100FF6253 /* PicPickUITests */,
+				6EF5BB0C2E6F244100FF6253 /* TrashDayUITests */,
 			);
-			name = PicPickUITests;
+			name = TrashDayUITests;
 			packageProductDependencies = (
 			);
-			productName = PicPickUITests;
-			productReference = 6EF5BB092E6F244100FF6253 /* PicPickUITests.xctest */;
+			productName = TrashDayUITests;
+			productReference = 6EF5BB092E6F244100FF6253 /* TrashDayUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6EF5BAED2E6F243F00FF6253 /* Build configuration list for PBXProject "PicPick" */;
+			buildConfigurationList = 6EF5BAED2E6F243F00FF6253 /* Build configuration list for PBXProject "TrashDay" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6EF5BAF12E6F243F00FF6253 /* PicPick */,
-				6EF5BAFE2E6F244100FF6253 /* PicPickTests */,
-				6EF5BB082E6F244100FF6253 /* PicPickUITests */,
+				6EF5BAF12E6F243F00FF6253 /* TrashDay */,
+				6EF5BAFE2E6F244100FF6253 /* TrashDayTests */,
+				6EF5BB082E6F244100FF6253 /* TrashDayUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		6EF5BB012E6F244100FF6253 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6EF5BAF12E6F243F00FF6253 /* PicPick */;
+			target = 6EF5BAF12E6F243F00FF6253 /* TrashDay */;
 			targetProxy = 6EF5BB002E6F244100FF6253 /* PBXContainerItemProxy */;
 		};
 		6EF5BB0B2E6F244100FF6253 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6EF5BAF12E6F243F00FF6253 /* PicPick */;
+			target = 6EF5BAF12E6F243F00FF6253 /* TrashDay */;
 			targetProxy = 6EF5BB0A2E6F244100FF6253 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -398,7 +398,7 @@
 				DEVELOPMENT_TEAM = 622375XNM6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = PicPick;
+				INFOPLIST_KEY_CFBundleDisplayName = "trash day";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to clean up photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -410,7 +410,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = me.patato.PicPick;
+				PRODUCT_BUNDLE_IDENTIFIER = me.patato.TrashDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -428,7 +428,7 @@
 				DEVELOPMENT_TEAM = 622375XNM6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = PicPick;
+				INFOPLIST_KEY_CFBundleDisplayName = "trash day";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to clean up photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -440,7 +440,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = me.patato.PicPick;
+				PRODUCT_BUNDLE_IDENTIFIER = me.patato.TrashDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -457,12 +457,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.patato.PicPickTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.patato.TrashDayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicPick.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PicPick";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrashDay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrashDay";
 			};
 			name = Debug;
 		};
@@ -475,12 +475,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.patato.PicPickTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.patato.TrashDayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicPick.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PicPick";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrashDay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrashDay";
 			};
 			name = Release;
 		};
@@ -491,12 +491,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.patato.PicPickUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.patato.TrashDayUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PicPick;
+				TEST_TARGET_NAME = TrashDay;
 			};
 			name = Debug;
 		};
@@ -507,19 +507,19 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.patato.PicPickUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.patato.TrashDayUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PicPick;
+				TEST_TARGET_NAME = TrashDay;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6EF5BAED2E6F243F00FF6253 /* Build configuration list for PBXProject "PicPick" */ = {
+		6EF5BAED2E6F243F00FF6253 /* Build configuration list for PBXProject "TrashDay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6EF5BB112E6F244100FF6253 /* Debug */,
@@ -528,7 +528,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6EF5BB132E6F244100FF6253 /* Build configuration list for PBXNativeTarget "PicPick" */ = {
+		6EF5BB132E6F244100FF6253 /* Build configuration list for PBXNativeTarget "TrashDay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6EF5BB142E6F244100FF6253 /* Debug */,
@@ -537,7 +537,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6EF5BB162E6F244100FF6253 /* Build configuration list for PBXNativeTarget "PicPickTests" */ = {
+		6EF5BB162E6F244100FF6253 /* Build configuration list for PBXNativeTarget "TrashDayTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6EF5BB172E6F244100FF6253 /* Debug */,
@@ -546,7 +546,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6EF5BB192E6F244100FF6253 /* Build configuration list for PBXNativeTarget "PicPickUITests" */ = {
+		6EF5BB192E6F244100FF6253 /* Build configuration list for PBXNativeTarget "TrashDayUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6EF5BB1A2E6F244100FF6253 /* Debug */,
